@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="883039d3-38bd-462c-8533-396d2e94c144" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/Main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/Director.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/base/DataStore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/base/Resources.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/base/ResourcesLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/player/Birds.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/player/Score.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/player/StartButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/runtime/DownPencil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/runtime/Land.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/runtime/UpPencil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/bgm.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/boom.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/bullet.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.json" beforeDir="false" afterPath="$PROJECT_DIR$/game.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Common.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/enemy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/animation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/pool.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/sprite.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/base/sprite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/databus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/symbol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/weapp-adapter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/npc/enemy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/player/bullet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/player/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/runtime/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/runtime/background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/runtime/gameinfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/runtime/music.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1iLivek1o2EBpmod2o74fa41epi" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="添加" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="883039d3-38bd-462c-8533-396d2e94c144" name="默认更改列表" comment="" />
+      <created>1601693505361</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601693505361</updated>
+      <workItem from="1601693506845" duration="3388000" />
+      <workItem from="1601718126911" duration="57000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="508" y="123" key="#JavaScript" timestamp="1601696207378">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state x="508" y="123" key="#JavaScript/0.0.1549.831@0.0.1549.831" timestamp="1601696207378" />
+    <state x="440" y="192" key="EditFileWatcherDialog" timestamp="1601693756029">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state x="440" y="192" key="EditFileWatcherDialog/0.0.1549.831@0.0.1549.831" timestamp="1601693756029" />
+    <state x="555" y="171" key="FileChooserDialogImpl" timestamp="1601693747323">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state x="555" y="171" key="FileChooserDialogImpl/0.0.1549.831@0.0.1549.831" timestamp="1601693747323" />
+    <state x="284" y="60" key="SettingsEditor" timestamp="1601696186732">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state x="284" y="60" key="SettingsEditor/0.0.1549.831@0.0.1549.831" timestamp="1601696186732" />
+    <state x="367" y="148" key="Vcs.Push.Dialog.v2" timestamp="1601694030925">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state x="367" y="148" key="Vcs.Push.Dialog.v2/0.0.1549.831@0.0.1549.831" timestamp="1601694030925" />
+    <state x="590" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601694023204">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state x="590" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1549.831@0.0.1549.831" timestamp="1601694023204" />
+  </component>
+</project>
