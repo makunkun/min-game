@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"scopeDataCheck": false,
 		"coverView": true,
 		"es6": true,
@@ -21,11 +21,9 @@
 		"showShadowRootInWxmlPanel": true
 	},
 	"compileType": "game",
-	"libVersion": "2.2.5",
+	"libVersion": "1.9.94",
 	"appid": "wx331b4f0493cc2a82",
-	"projectname": "min-game-kun",
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunction/",
+	"projectname": "min-game2",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
