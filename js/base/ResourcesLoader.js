@@ -4,9 +4,7 @@ import { Resources } from './Resources.js'
 export class ResourcesLoader {
   constructor() {
     this.map = new Map(Resources);
-    console.log(this.map);
     for (let [key, value] of this.map) {
-      console.log(key);
       const image = new Image();
       image.src = value;
       // 将map中的每个key的value替换为已经加载了对应图片资源的图片实例
