@@ -35,9 +35,7 @@ export class Main {
   init() {
     // 向dataStore的map中 放入 background实例对象
     this.dataStore
-      .put('background',
-        new BackGround(this.ctx,
-           this.dataStore.res.get('background')));
+      .put('background', BackGround);
     // 用单例导演 开始绘制
     Director.getInstance().run();
   }

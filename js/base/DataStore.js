@@ -6,6 +6,9 @@ export class DataStore {
 
   // 放入数据
   put(key, value) {
+    if (typeof value === 'function') {
+      value = new value();
+    }
     this.map.set(key, value);
     // 为了链式调用put方法，将对象本身return
     return this;

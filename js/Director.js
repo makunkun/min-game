@@ -3,7 +3,7 @@ import { DataStore } from "./base/DataStore.js";
 // 导演类，控制游戏的逻辑
 export class Director {
   constructor() {
-    console.log('构造器初始化');
+    console.log('导演构造器初始化');
     this.dataStore = DataStore.getInstance();
   }
   
