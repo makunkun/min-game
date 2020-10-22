@@ -8,6 +8,6 @@ export class BackGround extends Sprite {
       0, 0,
       image.width, image.height,
       0, 0,
-      window.innerWidth, window.innerHeight)
+      window.innerWidth, window.innerHeight);
   }
 }

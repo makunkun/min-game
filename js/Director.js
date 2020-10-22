@@ -9,10 +9,13 @@ export class Director {
   
   // 游戏运行的方法
   run() {
-    // 获取dataStore中的map对象的背景图实例background
-    const backgroundSprite = this.dataStore.get('background');
-    // 并调用BackGround类所继承的Sprite的draw方法进行绘制
-    backgroundSprite.draw();
+    // 获取dataStore中的map对象的精灵实例
+    // 并调用精灵类所继承的Sprite的draw方法进行绘制
+    this.dataStore.get('background').draw();
+    this.dataStore.get('land').draw();
+    let timer = requestAnimationFrame(() => { this.run(); })
+    this.dataStore.put('timer', timer);
+    // cancelAnimationFrame(this.dataStore.get('timer'));
   }
 
   // 单例模式

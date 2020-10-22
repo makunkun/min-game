@@ -1,6 +1,7 @@
 // 初始化整个游戏的精灵，作为游戏开始的入口
 import { ResourcesLoader } from './js/base/ResourcesLoader.js';
 import { BackGround } from './js/runtime/BackGround.js';
+import { Land } from './js/runtime/Land.js';
 import { Director } from "./js/Director.js";
 import { DataStore } from './js/base/DataStore.js';
 
@@ -27,16 +28,20 @@ export class Main {
     this.dataStore.ctx = this.ctx;
     // 放入所有图片组成的map对象
     this.dataStore.res = map;
+    console.log(map);
     // 初始化精灵类
     this.init();
   }
   
   // 初始化
   init() {
-    // 向dataStore的map中 放入 background实例对象
+    // put方法可以通过传入的精灵类，new出名为'精灵'的实例
+    // 并放入dataStore的map中
     this.dataStore
-      .put('background', BackGround);
-    // 用单例导演 开始绘制
+      .put('background', BackGround)
+      .put('land', Land);
+    // 单例导演的run方法里调用dataStore的get方法，取出map中的精灵类
+    // 并调用精灵类所继承的Sprite的draw方法进行绘制
     Director.getInstance().run();
   }
 
