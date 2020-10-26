@@ -32,35 +32,40 @@ export class Director {
 
   // 游戏运行的方法
   run() {
-    // this.addSpeed();
-    // 获取dataStore中的map对象的精灵实例
-    // 并调用精灵类所继承的Sprite的draw方法进行绘制
-    // 注意绘制图层的顺序！！！
-    this.dataStore.get('background').draw();
+    if (!this.isGameOver) { 
+      // this.addSpeed();
+      // 获取dataStore中的map对象的精灵实例
+      // 并调用精灵类所继承的Sprite的draw方法进行绘制
+      // 注意绘制图层的顺序！！！
+      this.dataStore.get('background').draw();
 
-    const pencils = this.dataStore.get('pencils');
+      const pencils = this.dataStore.get('pencils');
 
-    // 当第一组铅笔离开画布时,销毁掉它
-    if (pencils[0].x + pencils[0].width <= 0 && pencils.length === 4) {
-      // shift() 方法将数组第一个元素推出数组，并length减1
-      pencils.shift();
-      pencils.shift();
+      // 当第一组铅笔离开画布时,销毁掉它
+      if (pencils[0].x + pencils[0].width <= 0 && pencils.length === 4) {
+        // shift() 方法将数组第一个元素推出数组，并length减1
+        pencils.shift();
+        pencils.shift();
+      }
+
+      // 如果距离合适且只有一组铅笔， 就再创建一组
+      if (pencils[0].x <= (window.innerWidth - pencils[0].width) / 2 &&
+      pencils.length === 2) {
+        this.createPencil();
+      }
+
+      // 循环创建铅笔
+      pencils.forEach((value) => {
+        value.draw();
+      });
+      this.dataStore.get('land').draw();
+      let timer = requestAnimationFrame(() => { this.run(); })
+      this.dataStore.put('timer', timer);
+    } else {
+      console.log('游戏结束')
+      cancelAnimationFrame(this.dataStore.get('timer'));
+      this.dataStore.destroy();
     }
-
-    // 如果距离合适且只有一组铅笔， 就再创建一组
-    if (pencils[0].x <= (window.innerWidth - pencils[0].width) / 2 &&
-    pencils.length === 2) {
-      this.createPencil();
-    }
-
-    // 循环创建铅笔
-    pencils.forEach((value) => {
-      value.draw();
-    });
-    this.dataStore.get('land').draw();
-    let timer = requestAnimationFrame(() => { this.run(); })
-    this.dataStore.put('timer', timer);
-    // cancelAnimationFrame(this.dataStore.get('timer'));
   }
 
   // 单例模式

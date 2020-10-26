@@ -37,6 +37,10 @@ export class Main {
   
   // 初始化
   init() {
+
+    // 首先重置游戏是未结束的
+    this.director.isGameOver = false;
+
     // put方法可以通过传入的精灵类，new出名为'精灵'的实例
     // 并放入dataStore的map中
     this.dataStore
