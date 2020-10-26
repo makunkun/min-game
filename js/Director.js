@@ -62,7 +62,6 @@ export class Director {
       let timer = requestAnimationFrame(() => { this.run(); })
       this.dataStore.put('timer', timer);
     } else {
-      console.log('游戏结束')
       cancelAnimationFrame(this.dataStore.get('timer'));
       this.dataStore.destroy();
     }
