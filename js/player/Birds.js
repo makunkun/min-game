@@ -33,4 +33,21 @@ export class Birds extends Sprite{
     this.time = 0;
   }
 
+  draw() {
+    if (this.index >= 2) {
+      this.index = 0;
+    }
+    super.draw(
+      this.img,
+      this.clippingX[this.index],
+      this.clippingY[this.index],
+      this.clippingWidth[this.index],
+      this.clippingHeight[this.index],
+      this.birdsX[this.index],
+      this.y[this.index],
+      this.birdsWidth[this.index],
+      this.birdsHeight[this.index],
+    );
+    this.index += 1;
+  }
 }
