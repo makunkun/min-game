@@ -1,5 +1,5 @@
 // 背景类
-import {Sprite} from '../base/Sprite.js';
+import { Sprite } from '../base/Sprite.js';
 
 export class BackGround extends Sprite {
   constructor() {
