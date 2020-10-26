@@ -2,6 +2,7 @@
 import { ResourcesLoader } from './js/base/ResourcesLoader.js';
 import { BackGround } from './js/runtime/BackGround.js';
 import { Land } from './js/runtime/Land.js';
+import { Birds } from './js/player/Birds.js';
 import { Director } from "./js/Director.js";
 import { DataStore } from './js/base/DataStore.js';
 
@@ -46,7 +47,8 @@ export class Main {
     this.dataStore
       .put('pencils', [])
       .put('background', BackGround)
-      .put('land', Land);
+      .put('land', Land)
+      .put('birds',Birds);
     // 单例导演的run方法里调用dataStore的get方法，取出map中的精灵类
     // 创建pencil类,(要在游戏逻辑运行之前)
     this.director.createPencil();

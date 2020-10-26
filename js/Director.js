@@ -37,6 +37,8 @@ export class Director {
       // 获取dataStore中的map对象的精灵实例
       // 并调用精灵类所继承的Sprite的draw方法进行绘制
       // 注意绘制图层的顺序！！！
+
+      // 绘制背景图
       this.dataStore.get('background').draw();
 
       const pencils = this.dataStore.get('pencils');
@@ -54,11 +56,16 @@ export class Director {
         this.createPencil();
       }
 
-      // 循环创建铅笔
+      // 循环绘制铅笔
       pencils.forEach((value) => {
         value.draw();
       });
+
+      // 绘制陆地
       this.dataStore.get('land').draw();
+
+      // 绘制小鸟
+      this.dataStore.get('birds').draw();
       let timer = requestAnimationFrame(() => { this.run(); })
       this.dataStore.put('timer', timer);
     } else {
