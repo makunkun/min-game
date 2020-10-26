@@ -11,6 +11,8 @@ export class Main {
     this.ctx = this.canvas.getContext('2d');
     // 初始化单例全局数据DataStore
     this.dataStore = DataStore.getInstance();
+    // 存储导演单例实例
+    this.director = Director.getInstance();
     // 资源加载器及获取回调的map对象
     const loader = ResourcesLoader.create();
     loader.onLoaded((map) => {
@@ -38,11 +40,14 @@ export class Main {
     // put方法可以通过传入的精灵类，new出名为'精灵'的实例
     // 并放入dataStore的map中
     this.dataStore
+      .put('pencils', [])
       .put('background', BackGround)
       .put('land', Land);
     // 单例导演的run方法里调用dataStore的get方法，取出map中的精灵类
+    // 创建pencil类,(要在游戏逻辑运行之前)
+    this.director.createPencil();
     // 并调用精灵类所继承的Sprite的draw方法进行绘制
-    Director.getInstance().run();
+    this.director.run();
   }
 
 }
