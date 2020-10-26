@@ -10,8 +10,7 @@ export class UpPencil extends Pencil{
   }
 
   draw() {
-    let gap = window.innerHeight / 5;
-    this.y = this.top + gap;
+    this.y = this.top - this.height;
     super.draw();
   }
 
