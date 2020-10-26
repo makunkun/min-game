@@ -48,6 +48,9 @@ export class Birds extends Sprite{
       this.birdsWidth[this.index],
       this.birdsHeight[this.index],
     );
-    this.index += 1;
+    this.count += 1;
+    if (this.count % 10 === 0) {
+      this.index += 1;
+    }
   }
 }
