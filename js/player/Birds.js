@@ -34,9 +34,28 @@ export class Birds extends Sprite{
   }
 
   draw() {
+    // 切换三只小鸟的速度
+    const speed = 0.2;
+    this.count = this.count + speed;
     if (this.index >= 2) {
-      this.index = 0;
+      this.count = 0;
     }
+    // 减速器的作用
+    this.index = Math.floor(this.count);
+
+    // 模拟重力加速度
+    const g = 0.98 / 2.4;
+    // 向上移动一点偏移量(有30hz(刷新30次)的向上飞的时间，等this.time加到30时就向下掉)
+    const offsetUp = 30;
+    // 小鸟的位移
+    const offsetY = (g * this.time * (this.time - offsetUp)) / 2;
+
+    for(let i = 0; i <= 2; i++) {
+      this.birdsY[i] = this.y[i] + offsetY;
+    }
+
+    this.time++;
+
     super.draw(
       this.img,
       this.clippingX[this.index],
@@ -44,13 +63,9 @@ export class Birds extends Sprite{
       this.clippingWidth[this.index],
       this.clippingHeight[this.index],
       this.birdsX[this.index],
-      this.y[this.index],
+      this.birdsY[this.index],
       this.birdsWidth[this.index],
       this.birdsHeight[this.index],
     );
-    this.count += 1;
-    if (this.count % 10 === 0) {
-      this.index += 1;
-    }
   }
 }

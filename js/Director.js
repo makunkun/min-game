@@ -30,6 +30,14 @@ export class Director {
     this.dataStore.get('pencils').push(new DownPencil(top));
   }
 
+  birdsEvent() {
+    const birds = this.dataStore.get('birds');
+    for (let i = 0; i <= 2; i++) {
+      birds.y[i] = birds.birdsY[i];
+    }
+    birds.time = 0;
+  }
+
   // 游戏运行的方法
   run() {
     if (!this.isGameOver) { 

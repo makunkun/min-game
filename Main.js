@@ -49,11 +49,28 @@ export class Main {
       .put('background', BackGround)
       .put('land', Land)
       .put('birds',Birds);
+    // 注册事件
+    this.registerEvent();
     // 单例导演的run方法里调用dataStore的get方法，取出map中的精灵类
     // 创建pencil类,(要在游戏逻辑运行之前)
     this.director.createPencil();
     // 并调用精灵类所继承的Sprite的draw方法进行绘制
     this.director.run();
+  }
+
+  // 注册事件
+  registerEvent() {
+    this.canvas.addEventListener('touchstart', (e) => {
+      // 屏蔽掉JS的事件冒泡
+      e.preventDefault();
+      console.log('触发触摸事件');
+      if (this.director.isGameOver) {
+        console.log('游戏开始');
+        this.init();
+      } else {
+        this.director.birdsEvent();
+      }
+    })
   }
 
 }
