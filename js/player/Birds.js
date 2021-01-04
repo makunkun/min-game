@@ -14,7 +14,7 @@ export class Birds extends Sprite{
     this.clippingX = [
       9,
       9 + 34 + 18,
-      9 + 34 + 18 + 34
+      9 + 34 + 18 + 34 + 18
     ];
     this.clippingY = [10, 10, 10];
     this.clippingWidth = [34, 34, 34];
