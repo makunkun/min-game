@@ -6,6 +6,7 @@ import { Birds } from './js/player/Birds.js';
 import { Director } from "./js/Director.js";
 import { DataStore } from './js/base/DataStore.js';
 import { StartButton } from './js/player/StartButton.js';
+import { Score } from './js/player/Score.js';
 
 export class Main {
   constructor() {
@@ -28,6 +29,8 @@ export class Main {
   // 第一次加载，获取到资源全部加载完成的map对象
   onResourceFirstLoaded(map) {
     // 不需要销毁的变量进行直接进行赋值，不放在map中（否则会被销毁）
+    // 放入画布
+    this.dataStore.canvas = this.canvas;
     // 放入画笔
     this.dataStore.ctx = this.ctx;
     // 放入所有图片组成的map对象
@@ -50,6 +53,7 @@ export class Main {
       .put('background', BackGround)
       .put('land', Land)
       .put('birds',Birds)
+      .put('score', Score)
       .put('startButton', StartButton);
     // 注册事件
     this.registerEvent();

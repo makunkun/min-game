@@ -55,6 +55,7 @@ export class Director {
     const birds = this.dataStore.get('birds');
     const land = this.dataStore.get('land');
     const pencils = this.dataStore.get('pencils');
+    const score = this.dataStore.get('score');
     // 创建小鸟的边框模型
     const birdsBorder = {
       top: birds.y[0],
@@ -86,6 +87,14 @@ export class Director {
         return;
       }
     }
+    // 加分逻辑
+    // this.dataStore.get('score').draw();
+    if (birds.birdsX[0] > pencils[0].x + pencils[0].width 
+      &&score.isScore) {
+      score.isScore = false;
+      score.scoreNumber++;
+    }
+
   }
 
   // 游戏运行的方法
@@ -107,6 +116,8 @@ export class Director {
         // shift() 方法将数组第一个元素推出数组，并length减1
         pencils.shift();
         pencils.shift();
+        // 回收铅笔时开启加分功能
+        this.dataStore.get('score').isScore = true;
       }
 
       // 如果距离合适且只有一组铅笔， 就再创建一组
@@ -122,6 +133,9 @@ export class Director {
 
       // 绘制陆地
       this.dataStore.get('land').draw();
+
+      // 绘制分数
+      this.dataStore.get('score').draw();
 
       // 绘制小鸟
       this.dataStore.get('birds').draw();
