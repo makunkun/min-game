@@ -8,7 +8,7 @@ export class Pencil extends Sprite{
       image.width, image.height,
       // 刚好在右侧未出现到画布的位置
       window.innerWidth, 0,
-      image.width, image.height,);
+      image.width, image.height);
     this.top = top;
   }
 

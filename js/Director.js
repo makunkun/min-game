@@ -38,9 +38,60 @@ export class Director {
     birds.time = 0;
   }
 
+  // 判断小鸟是否和铅笔撞击
+  static isStrike(bird, pencil) {
+    let s = false;
+    if (bird.top > pencil.bottom ||
+          bird.bottom < pencil.top ||
+            bird.right < pencil.left ||
+             bird.left > pencil.right) {
+       s = true;
+    }
+    return !s;
+  }
+
+  // 判断小鸟是否撞击地板和铅笔
+  check() {
+    const birds = this.dataStore.get('birds');
+    const land = this.dataStore.get('land');
+    const pencils = this.dataStore.get('pencils');
+    // 创建小鸟的边框模型
+    const birdsBorder = {
+      top: birds.y[0],
+      bottom: birds.birdsY[0] + birds.birdsHeight[0],
+      left: birds.birdsX[0],
+      right: birds.birdsX[0] + birds.birdsWidth[0],
+    };
+
+    // 地板的撞击判断
+    if (birdsBorder.bottom >= land.y) {
+      this.isGameOver = true;
+      return;
+    }
+
+    // 创建铅笔的边框模型并调用判断撞击函数
+    const  length = pencils.length;
+    for (let i = 0; i < length; i++) {
+      const pencil = pencils[i];
+      // 创建每一支铅笔的边框模型
+      const pencilBorder = {
+        top:  pencil.y,
+        bottom:  pencil.y + pencil.height,
+        left: pencil.x,
+        right: pencil.x + pencil.width,
+      };
+      // 判断每一支铅笔是否与小鸟撞击
+      if (Director.isStrike(birdsBorder, pencilBorder)) {
+        this.isGameOver = true;
+        return;
+      }
+    }
+  }
+
   // 游戏运行的方法
   run() {
-    if (!this.isGameOver) { 
+    this.check();
+    if (!this.isGameOver) {
       // this.addSpeed();
       // 获取dataStore中的map对象的精灵实例
       // 并调用精灵类所继承的Sprite的draw方法进行绘制
@@ -77,6 +128,7 @@ export class Director {
       let timer = requestAnimationFrame(() => { this.run(); })
       this.dataStore.put('timer', timer);
     } else {
+      this.dataStore.get('startButton').draw();
       cancelAnimationFrame(this.dataStore.get('timer'));
       this.dataStore.destroy();
     }

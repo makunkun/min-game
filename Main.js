@@ -5,6 +5,7 @@ import { Land } from './js/runtime/Land.js';
 import { Birds } from './js/player/Birds.js';
 import { Director } from "./js/Director.js";
 import { DataStore } from './js/base/DataStore.js';
+import { StartButton } from './js/player/StartButton.js';
 
 export class Main {
   constructor() {
@@ -48,7 +49,8 @@ export class Main {
       .put('pencils', [])
       .put('background', BackGround)
       .put('land', Land)
-      .put('birds',Birds);
+      .put('birds',Birds)
+      .put('startButton', StartButton);
     // 注册事件
     this.registerEvent();
     // 单例导演的run方法里调用dataStore的get方法，取出map中的精灵类
