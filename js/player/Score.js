@@ -13,7 +13,7 @@ export class Score {
     this.ctx.font="25px Arial";
     this.ctx.fillStyle = '#0000ff';
     this.ctx.fillText(`${this.scoreNumber}分`,
-      DataStore.getInstance().canvas.width / 2,
-      DataStore.getInstance().canvas.height / 18, 1000);
+      DataStore.getInstance().canvas.width / 2.2,
+      DataStore.getInstance().canvas.height / 16, 1000);
   }
 }
