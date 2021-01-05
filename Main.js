@@ -21,8 +21,6 @@ export class Main {
     loader.onLoaded((map) => {
       this.onResourceFirstLoaded(map);
     })
-    // 导演单例
-    // Director.getInstance();
   }
   
 
@@ -37,14 +35,27 @@ export class Main {
     this.dataStore.res = map;
     // 初始化精灵类
     this.init();
+    this.director.main = this;
   }
-  
+    //创建背景音乐
+  createBackgroundMusic() {
+    const bgm = wx.createInnerAudioContext();
+    bgm.autoplay = true;
+    bgm.loop = true;
+    bgm.src = 'audios/bgm.mp3';
+    this.director.bgm = bgm;
+  }
   // 初始化
   init() {
 
     // 首先重置游戏是未结束的
     this.director.isGameOver = false;
-
+      // 重置背景音乐
+    if (this.director.bgm) {
+      this.director.bgm.play();
+    } else {
+        this.createBackgroundMusic();
+    }
     // put方法可以通过传入的精灵类，new出名为'精灵'的实例
     // 并放入dataStore的map中
     this.dataStore

@@ -7,6 +7,9 @@ export class Director {
   constructor() {
     this.dataStore = DataStore.getInstance();
     this.moveSpeed = 2;
+    this.bgm = '';
+    // 主函数实例,防止循环引用
+    this.main = null;
   }
   
   // 加速度
@@ -89,8 +92,16 @@ export class Director {
     // this.dataStore.get('score').draw();
     if (birds.birdsX[0] > pencils[0].x + pencils[0].width 
       &&score.isScore) {
+      // 震动
+      wx.vibrateShort();
       score.isScore = false;
       score.scoreNumber++;
+      // 显示提示
+      wx.showToast({
+        title: `已获得${score.scoreNumber}分`,
+        duration: 500,
+        icon: 'success',
+      })
     }
 
   }
@@ -140,10 +151,29 @@ export class Director {
       let timer = requestAnimationFrame(() => { this.run(); })
       this.dataStore.put('timer', timer);
     } else {
-      this.dataStore.get('startButton').draw();
+      // 停止bgm
+      this.bgm.stop();
       cancelAnimationFrame(this.dataStore.get('timer'));
       this.dataStore.destroy();
+      //触发微信小游戏垃圾回收
+      wx.triggerGC();
+      wx.showModal({
+        title: 'You Fail,Try Again',
+        confirmText: '再来一次',
+        success: ({ confirm }) => {
+          if (confirm) {
+            this.main.init();
+          } else {
+            this.reset();
+          }
+        },
+      })
     }
+  }
+
+  reset() {
+    // 画出暂停键
+    this.dataStore.get('startButton').draw();
   }
 
   // 单例模式
