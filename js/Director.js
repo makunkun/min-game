@@ -5,7 +5,6 @@ import { UpPencil } from "./runtime/UpPencil.js";
 // 导演类，控制游戏的逻辑
 export class Director {
   constructor() {
-    console.log('导演构造器初始化');
     this.dataStore = DataStore.getInstance();
     this.moveSpeed = 2;
   }
@@ -19,12 +18,11 @@ export class Director {
   //   } else if (this.moveSpeed >= 10) {
   //     this.moveSpeed = 10;
   //   }
-  //   console.log(this.moveSpeed);
   // }
 
   createPencil() {
-    const minTop = window.innerHeight / 8;
-    const maxTop = window.innerHeight / 2;
+    const minTop = DataStore.getInstance().canvas.height / 8;
+    const maxTop = DataStore.getInstance().canvas.height / 2;
     const top = minTop + Math.random() * (maxTop - minTop);
     this.dataStore.get('pencils').push(new UpPencil(top));
     this.dataStore.get('pencils').push(new DownPencil(top));
@@ -121,7 +119,7 @@ export class Director {
       }
 
       // 如果距离合适且只有一组铅笔， 就再创建一组
-      if (pencils[0].x <= (window.innerWidth - pencils[0].width) / 2 &&
+      if (pencils[0].x <= (DataStore.getInstance().canvas.width - pencils[0].width) / 2 &&
       pencils.length === 2) {
         this.createPencil();
       }

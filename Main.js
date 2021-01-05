@@ -10,7 +10,7 @@ import { Score } from './js/player/Score.js';
 
 export class Main {
   constructor() {
-    this.canvas = document.getElementById('game_canvas');
+    this.canvas = wx.createCanvas();
     this.ctx = this.canvas.getContext('2d');
     // 初始化单例全局数据DataStore
     this.dataStore = DataStore.getInstance();
@@ -35,7 +35,6 @@ export class Main {
     this.dataStore.ctx = this.ctx;
     // 放入所有图片组成的map对象
     this.dataStore.res = map;
-    console.log(map);
     // 初始化精灵类
     this.init();
   }
@@ -66,17 +65,13 @@ export class Main {
 
   // 注册事件
   registerEvent() {
-    this.canvas.addEventListener('touchstart', (e) => {
-      // 屏蔽掉JS的事件冒泡
-      e.preventDefault();
-      console.log('触发触摸事件');
+    wx.onTouchStart(() => {
       if (this.director.isGameOver) {
-        console.log('游戏开始');
-        this.init();
+          this.init();
       } else {
-        this.director.birdsEvent();
+          this.director.birdsEvent();
       }
-    })
+    });
   }
 
 }

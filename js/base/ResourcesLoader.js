@@ -5,7 +5,7 @@ export class ResourcesLoader {
   constructor() {
     this.map = new Map(Resources);
     for (let [key, value] of this.map) {
-      const image = new Image();
+      const image = wx.createImage();
       image.src = value;
       // 将map中的每个key的value替换为已经加载了对应图片资源的图片实例
       this.map.set(key, image);
